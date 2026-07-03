@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokiyo Lifestyle — Launching 16th July 2026</title>
+  <meta name="description" content="Tokiyo Lifestyle — Premium streetwear rooted in Odisha. Inspired by culture. Worn by you. Launching 16th July 2026 on Ratha Yatra.">
+  <meta property="og:title" content="Tokiyo Lifestyle — Coming Soon">
+  <meta property="og:description" content="Rooted in Odisha. Inspired by Culture. Worn by You. Launching 16th July 2026.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:  #0D0D0D;
+      --white:  #FFFFFF;
+      --cream:  #F5F0EA;
+      --gold:   #C9A86A;
+      --red:    #CC1F1F;
+      --muted:  rgba(255,255,255,0.55);
+      --ff:     'Poppins', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--ff);
+      min-height: 100dvh;
+      overflow-x: hidden;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero-bg.jpeg');
+      background-size: cover;
+      background-position: center top;
+      filter: brightness(0.45);
+    }
+
+    .hero__gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,13,13,0.2) 0%,
+        rgba(13,13,13,0.1) 40%,
+        rgba(13,13,13,0.85) 80%,
+        rgba(13,13,13,1) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo-wrap {
+      margin-bottom: 2rem;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .logo-wrap img {
+      width: clamp(140px, 35vw, 220px);
+      height: auto;
+      filter: drop-shadow(0 4px 24px rgba(0,0,0,0.6));
+    }
+
+    /* Live pill */
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(204,31,31,0.15);
+      border: 1px solid rgba(204,31,31,0.4);
+      color: #FF6B6B;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      animation: fadeDown 0.8s 0.15s ease both;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: #FF6B6B;
+      border-radius: 50%;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    /* Launch date */
+    .launch-date {
+      font-size: clamp(3rem, 12vw, 7.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      animation: fadeUp 0.8s 0.25s ease both;
+    }
+
+    .launch-date span {
+      display: block;
+      background: linear-gradient(135deg, #fff 0%, var(--gold) 60%, #fff 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .launch-occasion {
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.35s ease both;
+    }
+
+    /* Tagline */
+    .tagline {
+      font-size: clamp(1rem, 3vw, 1.35rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.45s ease both;
+    }
+
+    .tagline strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ==============================
+       COUNTDOWN
+    ============================== */
+    .countdown {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.8s 0.55s ease both;
+    }
+
+    .cd-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: clamp(60px, 16vw, 90px);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,106,0.2);
+      border-radius: 12px;
+      padding: clamp(0.6rem, 2vw, 1rem) 0.5rem;
+    }
+
+    .cd-num {
+      font-size: clamp(1.75rem, 7vw, 3rem);
+      font-weight: 800;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      color: var(--white);
+    }
+
+    .cd-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.35rem;
+      font-weight: 600;
+    }
+
+    .cd-sep {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-weight: 300;
+      color: rgba(201,168,106,0.4);
+      padding-bottom: 1.2rem;
+      line-height: 1;
+    }
+
+    /* ==============================
+       BRAND PROMISE STRIP
+    ============================== */
+    .strip {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(201,168,106,0.15);
+      border-bottom: 1px solid rgba(201,168,106,0.15);
+      overflow: hidden;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .strip__track {
+      display: flex;
+      width: max-content;
+      animation: marquee 20s linear infinite;
+      padding: 0.9rem 0;
+    }
+
+    .strip__track:hover { animation-play-state: paused; }
+
+    .strip__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0 2rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      white-space: nowrap;
+    }
+
+    .strip__dot {
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ==============================
+       ABOUT SECTION
+    ============================== */
+    .about {
+      background: var(--black);
+      padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+    }
+
+    .about__inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .about__title {
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+
+    .about__text {
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+    }
+
+    .about__text em {
+      color: var(--white);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Values grid */
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(201,168,106,0.12);
+      border: 1px solid rgba(201,168,106,0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+
+    .value-item {
+      background: var(--black);
+      padding: clamp(1.25rem, 4vw, 2rem) 1rem;
+      text-align: center;
+    }
+
+    .value-item__icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .value-item__title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .value-item__text {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .values { grid-template-columns: 1fr; }
+    }
+
+    /* ==============================
+       LAUNCH INFO
+    ============================== */
+    .launch-info {
+      background: linear-gradient(135deg, #0D0D0D 0%, #1a1208 100%);
+      padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .launch-info::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201,168,106,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .launch-info__inner {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .launch-info__date {
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .launch-info__sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .launch-info__poem {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      color: rgba(255,255,255,0.6);
+      line-height: 2.2;
+      font-weight: 300;
+    }
+
+    .launch-info__poem strong {
+      color: var(--white);
+      font-weight: 600;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    /* ==============================
+       CONTACT
+    ============================== */
+    .contact {
+      background: #0A0A0A;
+      padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,106,0.1);
+    }
+
+    .contact__inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .contact__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .contact__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: clamp(0.9rem, 3vw, 1.05rem);
+      font-weight: 500;
+      transition: color 0.2s ease;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.08);
+      width: 100%;
+      max-width: 320px;
+      justify-content: center;
+    }
+
+    .contact__link:hover {
+      color: var(--white);
+      border-color: rgba(201,168,106,0.4);
+      background: rgba(201,168,106,0.05);
+    }
+
+    .contact__icon {
+      font-size: 1rem;
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background: #0A0A0A;
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer__text {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.06em;
+    }
+
+    /* ==============================
+       ANIMATIONS
+    ============================== */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2W3DD2C9Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q2W3DD2C9Z');
+  </script>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__gradient"></div>
+
+    <div class="hero__content">
+      <!-- Logo -->
+      <div class="logo-wrap">
+        <img
+          src="file__2_.jpg"
+          alt="Tokiyo Lifestyle"
+          onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block'">
+        <div class="logo-text" style="display:none; font-size:2.5rem; font-weight:900; letter-spacing:0.05em;">TOKIYO <span style="color:var(--gold)">LIFESTYLE</span></div>
+      </div>
+
+      <!-- Live badge -->
+      <div class="live-pill">
+        <span class="live-dot"></span>
+        Going Live Soon
+      </div>
+
+      <!-- Big date -->
+      <h1 class="launch-date"><span>16th July</span></h1>
+      <p class="launch-occasion">🚩 Ratha Yatra 2026 — A New Chapter Begins</p>
+
+      <!-- Tagline -->
+      <p class="tagline">
+        <strong>Rooted in Odisha.</strong> Inspired by Culture.<br>
+        Worn by You.
+      </p>
+
+      <!-- Countdown -->
+      <div class="countdown">
+        <div class="cd-block">
+          <span class="cd-num" id="days">00</span>
+          <span class="cd-label">Days</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <span class="cd-num" id="hours">00</span>
+          <span class="cd-label">Hours</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <span class="cd-num" id="mins">00</span>
+          <span class="cd-label">Mins</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <span class="cd-num" id="secs">00</span>
+          <span class="cd-label">Secs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE STRIP ===== -->
+  <div class="strip">
+    <div class="strip__track">
+      <span class="strip__item">Proudly Made in Odisha <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Premium Oversized Tees <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Inspired by Culture <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Modern Streetwear <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Crafted for Everyday Comfort <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Designed to Tell Your Story <span class="strip__dot">✦</span></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="strip__item">Proudly Made in Odisha <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Premium Oversized Tees <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Inspired by Culture <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Modern Streetwear <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Crafted for Everyday Comfort <span class="strip__dot">✦</span></span>
+      <span class="strip__item">Designed to Tell Your Story <span class="strip__dot">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about">
+    <div class="about__inner">
+      <span class="eyebrow reveal">A New Journey Begins</span>
+      <h2 class="about__title reveal">Fashion is More Than Clothing.</h2>
+      <p class="about__text reveal">
+        Just as the sacred chariots of <em>Shree Jagannath</em> unite millions during the divine
+        <em>Ratha Yatra</em>, Tokiyo Lifestyle begins its own journey — a vision rooted in Odisha
+        and inspired by culture.
+      </p>
+      <p class="about__text reveal">
+        We believe fashion is a reflection of <em>identity, heritage, and confidence</em>. Every
+        oversized tee we create carries a story of craftsmanship, comfort, and culture — designed
+        for those who wear their roots with pride.
+      </p>
+
+      <div class="values reveal">
+        <div class="value-item">
+          <div class="value-item__icon">🏛️</div>
+          <div class="value-item__title">Rooted in Heritage</div>
+          <div class="value-item__text">Inspired by the culture and spirit of Odisha</div>
+        </div>
+        <div class="value-item">
+          <div class="value-item__icon">🧵</div>
+          <div class="value-item__title">Premium Quality</div>
+          <div class="value-item__text">Soft fabrics built for comfort and lasting wear</div>
+        </div>
+        <div class="value-item">
+          <div class="value-item__icon">🎨</div>
+          <div class="value-item__title">Modern Streetwear</div>
+          <div class="value-item__text">Where tradition meets contemporary aesthetic</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LAUNCH INFO ===== -->
+  <section class="launch-info">
+    <div class="launch-info__inner">
+      <p class="eyebrow reveal">Launching Live on</p>
+      <div class="launch-info__date reveal">16th July 2026</div>
+      <p class="launch-info__sub reveal">Ratha Yatra — Puri, Odisha</p>
+      <div class="launch-info__poem reveal">
+        A day of devotion.<br>
+        A day of new beginnings.<br>
+        A day when tradition meets modern streetwear.
+        <strong>Join us as we unveil Tokiyo Lifestyle to the world. 🚩</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact">
+    <div class="contact__inner">
+      <p class="contact__label reveal">Get in Touch</p>
+      <div class="contact__links reveal">
+        <a href="tel:+919114111018" class="contact__link">
+          <span class="contact__icon">📞</span>
+          +91 91141 11018
+        </a>
+        <a href="mailto:info@tokiyolifestyle.com" class="contact__link">
+          <span class="contact__icon">✉️</span>
+          info@tokiyolifestyle.com
+        </a>
+        <a href="https://www.instagram.com/tokiyolifestyle" target="_blank" rel="noopener" class="contact__link">
+          <span class="contact__icon">📸</span>
+          Follow on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p class="footer__text">© 2026 Tokiyo Lifestyle. All rights reserved. &nbsp;·&nbsp; Made with pride in Odisha 🇮🇳</p>
+  </footer>
+
+  <script>
+    // ---- Countdown to 16 July 2026 midnight IST ----
+    const launch = new Date('2026-07-16T00:00:00+05:30').getTime();
+    const pad = n => String(n).padStart(2, '0');
+
+    function tick() {
+      const diff = launch - Date.now();
+      if (diff <= 0) {
+        ['days','hours','mins','secs'].forEach(id => document.getElementById(id).textContent = '00');
+        return;
+      }
+      document.getElementById('days').textContent  = pad(Math.floor(diff / 86400000));
+      document.getElementById('hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      document.getElementById('mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
+      document.getElementById('secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ---- Scroll reveal ----
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
